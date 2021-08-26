@@ -1,0 +1,52 @@
+@import '../../../assets/scss/typography.scss';
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/mixins.scss';
+
+.menu-container {
+    margin: 5.1rem .1rem 15rem .1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    gap: .1rem;
+    overflow: hidden;
+    
+    .boxes, .sushi, .desserts, .drinks {
+        width: 25%;
+        height: 563px;        
+        background-position: center;
+        background-size: cover;
+        
+        .more {
+            padding: .6rem 1.6rem;
+            font-family: $font-family-headings;
+            font-size: calc($font-size-buttons -1);
+            background-color: rgba(0, 0, 0, 0.78);
+            color: rgba(255, 255, 255, .50);
+            border: none;
+            border-radius: 2px;
+            box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.472);
+            
+            &:active {
+                color: white;
+                transform: scale(.95);
+                box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.250);
+            }
+        }
+    }
+    
+    .boxes {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 10%, rgba(0, 0, 0, 0.70) 50%), url('../../../assets/images/set-collection.jpg');
+    }
+    
+    .sushi {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 10%, rgba(0, 0, 0, 0.70) 50%), url('../../../assets/images/hands.jpg');
+    }
+    
+    .desserts {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 10%, rgba(0, 0, 0, 0.70) 50%), url('../../../assets/images/bg-desserts.jpg');
+    }
+    
+    .drinks {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.60) 10%, rgba(0, 0, 0, 0.70) 50%), url('../../../assets/images/drinks.jpg');
+    }
+}
