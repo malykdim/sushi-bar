@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+// @import 'variables';
+// @import 'typography';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nothing+You+Could+Do&display=swap');
+
+body {
+    margin: 7vh 0 0;
+    
+    font: 14px system-ui;
+    
+    background: #222;
+    color: #fff;
+    
+    a {
+        color: inherit;
+    }
+}

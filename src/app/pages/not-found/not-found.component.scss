@@ -1,0 +1,43 @@
+@import "variables";
+@import "typography";
+
+
+.not-found {
+    width: 100;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: radial-gradient(
+        rgba(0, 0, 0, 0.75), 
+        rgba(0, 0, 0, 0.95)
+        ), 
+        url('../../../assets/images/21.webp');
+    background-size: 100% 100%;
+    background-origin: padding-box;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #06050a;
+    
+    font-family: $font-family-headings;
+    letter-spacing: $letter-spacing;
+    line-height: 14.4em;
+    
+    h3 {
+        font-size: 5em;
+        font-weight: 400;
+    }
+    
+    h2 {
+        font-size: 11em;
+        font-weight: 400;
+    }
+    
+    h4 {
+        font-size: 5em;
+        font-weight: 400;
+    }
+}

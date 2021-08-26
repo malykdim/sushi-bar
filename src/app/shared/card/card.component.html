@@ -1,0 +1,11 @@
+<div class="card-container" *ngIf="sushi.objectId">
+    <div class="image-container">
+        <img [src]="sushi.imgUrl" alt="sushi">        
+    </div>
+    <p>{{sushi.name}}</p>
+    <span>{{sushi.ingredients}}</span>
+    <p>{{sushi.price}}&nbsp;&euro;</p>
+    <button class="add-to-cart" (click)="cartToggle()">
+        {{inCart ? 'Remove' : 'Add to cart'}}
+    </button>
+</div>

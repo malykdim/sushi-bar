@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="form-container">
+        <form #signupForm="ngForm" (submit)="submit()" id="register-form" class="register-form">
+            <fieldset>
+                <p class="field field-icon">
+                    <label for="username">
+                        <span>
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </label>
+                    <input class="input-error" type="text" [(ngModel)]="form.username" name="username" id="username" placeholder="your name" required>
+                </p>
+
+                <p class="field field-icon">
+                    <label for="email">
+                        <span>
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </label>
+                    <input class="input-error" type="email" [(ngModel)]="form.email" name="email" id="email" placeholder="your email" pattern="/^[a-zA-Z0-9\.-]{3,}@[a-zA-Z0-9]{3,}.[a-zA-Z0-9]{2,}$/" required>
+                </p>
+                <!-- 
+                    <ul class="errors">
+                        <li >Email is required</li>
+                        <li >Email is invalid</li>
+                    </ul>
+                -->    
+                <p class="field field-icon">
+                    <label for="password">
+                        <span>
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </label>
+                    <input type="password" [(ngModel)]="form.password" name="password" id="password" placeholder="******" minlength="3" required>
+                </p>
+                <!-- 
+                    <p class="error">Password is required!</p>    
+                    <p class="error">Password must be at least 4 characters!</p>    
+                        
+                -->
+                <button class="button field">Signup</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="switch-forms">
+        <p class="toggle-link">
+            <span>Already have an account?</span>&nbsp;
+            <a class="login" href="/login">Login</a>   
+        </p>
+    </div>
+</div>

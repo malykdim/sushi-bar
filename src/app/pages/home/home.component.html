@@ -1,0 +1,11 @@
+<div class="home-container">   
+    <div *ngIf="sushies"  class="home-container-inner cards">
+        <app-card *ngFor="let sushi of sushies; trackBy: sushiTracker" [sushi]="sushi" style="float: left"></app-card> 
+        
+        <div *ngIf="!sushies[0]">Loading...</div>
+    </div>
+    
+    <div class="home-container-inner features">
+        <app-features></app-features>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/typography.scss";
+@import "../../../assets/scss/mixins.scss";
+
+.header {
+    height: 5rem;
+    width: 100%;
+    padding: 1rem;
+    
+    position: fixed;
+    top: 0;
+    
+    background: #111;
+    color: white;
+    
+    font-family: $font-family-headings;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+    
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+    .logo-container, .user, .nav-item, .menu-toggler {
+        cursor: pointer;
+    }
+    
+    .logo-container {
+        width: 50px;
+        height: 50px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media all and (max-width: 767px) {
+            width: 60px;
+            height: 60px;
+        }
+        @media all and (max-width: 539px) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+        
+    .siteTitle {
+        margin: 0;
+        font-family: inherit;
+        font-size: 2.5em;
+        font-weight: 700;
+        color: $h-c-light;  
+        background: $h-bg-dark; 
+        margin-top: .3rem;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+        line-height: $line-height;
+        text-shadow: $text-shadow;
+        
+        @media all and (min-width: 2559px) {
+            font-size: 3em;
+            padding-top: .9rem;
+        }
+        @media all and (max-width: 767px) {
+            font-size: 1.6em;
+            padding-top: .9rem;
+        }
+        @media all and (max-width: 539px) {
+            font-size: 1.6em;
+            padding-top: .5rem;
+        }
+        @media all and (max-width: 350px) {
+            font-size: 1.05em;
+            padding-top: .7rem;
+        }
+    }
+    
+    .nav-container {
+        display: flex;
+        
+        .toggle-menu {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            padding: 0 3rem;
+            
+            .nav-list {
+                list-style: none;
+                
+                &--dashboard, &--user {
+                    display: flex;
+                    gap: 1rem;
+                }
+                
+                .nav-item {
+                    display: flex;
+                    gap: 1rem;
+                    .nav-link {
+                        text-decoration: none;
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+        
+        .menu-toggler {
+            padding: .5rem 1rem;
+            font-size: 2.5em;
+            border: 1px solid transparent;
+            border-radius: 1px;
+            box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.472);
+            
+            &:active {
+                box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.250);
+            }
+            
+            @media all and (max-width: 767px) {
+                padding: .1rem 1rem;
+            }
+            @media all and (max-width: 539px) {
+                padding: .1rem 1rem;
+            }
+        }
+    }
+    
+    @media all and (max-width: 539px) {
+        height: 50px;
+        padding: 9px;
+    }
+}

@@ -1,0 +1,126 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/typography.scss";
+@import "../../../assets/scss/mixins.scss";
+
+
+
+.footer {
+    height: 9vh;
+    width: 100%;
+    
+    position: fixed;
+    bottom: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    color: white;
+    background-color: #111;
+    
+    font-family: $font-family-headings;
+    font-size: 2em;
+    
+    p {
+        padding-left: 1rem;
+    }
+    
+    .container {
+        text-align: center;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            position: relative;
+            
+            margin-bottom: 30px;
+            max-width: 100%;
+            width: 350px;
+            
+            &::before {
+                content: '';
+                background-color: var(--line-border-empty);
+                
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                
+                height: 4px;
+                width: 100%;
+                
+                z-index: -1;
+            }
+            
+            .progress {
+                background-color: var(--line-border-fill);
+                
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                
+                height: 4px;
+                width: 0%;
+                
+                z-index: -1;
+                transition: .4s ease;
+            }
+            
+            .circle {
+                background-color: transparent;
+                color: #999;
+                border: 3px solid var(--line-border-empty);
+                border-radius: 50%;
+                height: 30px;
+                width: 30px;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                transition: .4s ease;
+                
+                &.active {
+                    border-color: var(--line-border-fill);
+                }
+            }
+        }
+        
+        .btn {
+            background-color: var(--line-border-fill);
+            color: floralwhite;
+            border: 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 8px 32px;
+            margin: 1rem;
+            
+            &:active {
+                transform: scale(.98);
+            }
+            
+            &:focus {
+                outline: none;
+            }
+            
+            &:disabled {
+                background-color: var(--line-border-empty);
+                cursor: not-allowed;
+            }
+        }
+        
+        .btn-contact {
+            color: #000;
+            background-color: transparent;
+            padding-right: 2rem;
+        }
+    }
+}

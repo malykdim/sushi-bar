@@ -1,0 +1,73 @@
+@import '../../../assets/scss/mixins.scss';
+@import '../../../assets/scss/typography.scss';
+@import '../../../assets/scss/variables.scss';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('../../../assets/images/bg-sign-in.jpg');
+    background-position: center;
+    background-size: cover;
+    
+    .form-container {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        
+        
+        .login-form {
+            
+            
+            fieldset {
+                padding: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                
+                input {
+                    padding: .8rem;
+                    border: 1px solid transparent;
+                    border-radius: 2px;
+                    font-size: 1.4em;
+                }
+                
+                .field {
+                    margin: 1rem;
+                }
+                
+                .button {
+                    @include button;
+                    width: 33.9%;
+                }
+            }
+        }
+    }
+        
+    .switch-forms {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        bottom: 100px;
+        
+        .toggle-link {
+            padding: 0 .5rem;
+            font-family: $font-family-text;
+            font-size: 1.1em;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .register {
+            text-align: center;
+            font-weight: 100;
+        }
+    }
+}

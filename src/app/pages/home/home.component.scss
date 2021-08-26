@@ -1,0 +1,23 @@
+@import "variables";
+@import "typography";
+
+.home-container {
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.80) 10%, rgba(0, 0, 0, 0.97) 50%), url('../../../assets/images/bg-home.jpg');
+    background-position: center;
+    background-size: cover;
+    
+    .home-container-inner {
+        // background: #333;
+        color: $h-c-light;
+        padding: 7px;
+    }
+    
+        
+}
+
+// .cards {
+//     overflow-y: scroll;
+// }

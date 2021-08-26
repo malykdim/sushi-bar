@@ -1,0 +1,113 @@
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/typography.scss';
+
+.profile-container {
+    margin: 5.15rem .1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .caption {
+        font-family: $font-family-headings;
+        font-size: $font-size;
+        color: $h-c-light;
+        padding-left: 2rem;
+    }
+    
+    .profile-info {
+        width: 49.5%;
+        height: 79vh;
+        border-right: 1px solid $-color-slash;
+        padding-right: 0rem;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('../../../assets/images/profile-info.jpg');
+        background-position: center;
+        background-size: cover;  
+        
+        .user-card {
+            display: flex;
+            
+            .labels, .info {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .labels {
+                position: absolute;
+                top: 10rem;
+                left: 20rem;
+                display: flex;
+                justify-content: flex-end;
+                
+                .label {
+                    padding: 1rem 0;
+                    color: $h-c-light;
+                }
+            }
+            
+            .info {
+                position: absolute;
+                top: 10rem;
+                left: 29rem;
+                display: flex;
+                justify-content: flex-start;
+                
+                
+                .data {
+                    padding: 1.1rem 0;
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                }
+                
+                .edit {
+                    display: inline-block;
+                    margin-top: 1rem;
+                    padding: 0 0rem;
+                }
+            }
+        }
+    }
+    
+    .latest-order {
+        width: 49.5%;
+        height: 79vh;
+        padding-left: 1rem;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)), url('../../../assets/images/latest-order.jpg');
+        background-position: center;
+        background-size: cover;
+        
+        .order-card {
+            display: flex;
+            
+            .labels {
+                position: absolute;
+                top: 15rem;
+                left: 65rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                
+                .label {
+                    padding: 1rem 0;
+                    color: $h-c-light;
+                }
+            }
+            
+            .info {
+                position: absolute;
+                top: 15rem;
+                left: 75rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                
+                .label {
+                    padding: 1rem 0;
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                }
+            }
+        }
+    }
+}

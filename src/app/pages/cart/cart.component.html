@@ -1,0 +1,26 @@
+<div class="container cart-container">
+    <div class="list">
+        <h2>Your Current order</h2>     
+        <p class="summary">
+            {{form.cart.length}} dishes for total of {{total}} &#x020AC;            
+        </p>
+        <div class="item" *ngFor="let c of form.cart">
+            <div class="img-container">
+                <img [src]="c.imgUrl" alt="sushi">
+            </div>
+            <p class="name">{{c.name}}</p>
+            <span class="total">{{c.price}} &nbsp; &#x020AC;</span>
+        </div>
+    </div>
+    <div class="next">
+        <ng-container *ngIf="!user.isLogged; else placeOrderTempalte">
+            <a routerLink="/signup">Not a member? Signup</a><br>
+            <a routerLink="/login">Already a member? Login</a>    
+        </ng-container>
+        
+        <ng-template #placeOrderTempalte>
+            <button (click)="submitOrder()">Submit order</button>    
+        </ng-template>
+    </div>
+</div>
+
