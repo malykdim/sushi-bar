@@ -155,7 +155,9 @@ export class AjaxService {
                         (data.data ? `&${data.data}` : '')
                     }`;
                 }
-                data.url += `?${data.data}`;
+                if (data.data) {
+                    data.url += `?${data.data}`;                    
+                }
             }
 
             return { ...this.ajaxDefaults, ...data };

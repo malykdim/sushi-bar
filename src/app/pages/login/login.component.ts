@@ -1,17 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
+import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
     
-    constructor() {}
+  constructor(
+      private cart: CartService,
+      private user: UserService,
+      private router: Router,
+      private loginServ: LoginService
+  ) {}
 
-    ngOnInit(): void {}
-    
-    login() {
-        console.log('login');
-    }
+  
+  public form = {
+      username: '',
+      password: ''
+  };
+  
+  public submit(): void {
+    this.loginServ.login({
+      username: this.form.username,
+      password: this.form.password,
+      callback: (json) => {
+        if (this.cart.get()[0]) {
+          this.router.navigate(['/cart']);
+          return;
+        }
+        this.router.navigate(['/profile']);
+      }
+    });
+  }
 }

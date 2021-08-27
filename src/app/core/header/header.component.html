@@ -16,12 +16,19 @@
                 </li>
             </ul>
             <ul class="nav-list nav-list--user" id="user">
-                <li class="nav-item">
-                    <a routerLink="/signup" class="nav-link">Signup</a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="/login" class="nav-link">Login</a>
-                </li>
+                <ng-container *ngIf="!user.isLogged; else notLoggedTemplate">
+                    <li class="nav-item">
+                        <a routerLink="/signup" class="nav-link">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/login" class="nav-link">Login</a>
+                    </li>                    
+                </ng-container>
+                <ng-template #notLoggedTemplate>
+                    <li class="nav-item">
+                        <span class="nav-link" (click)="user.logout()">Logout</span>
+                    </li>    
+                </ng-template>
                 <li class="nav-item">
                     <a routerLink="/profile" class="nav-link">Profile</a>
                 </li>

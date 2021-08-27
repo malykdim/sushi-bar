@@ -28,6 +28,10 @@ export class CartService {
       this.cart.splice(index, 1);
       this.notify();
       console.log(this.cart);
+    },
+    removeAll: (): void => {
+      this.cart = [];
+      this.notify();
     }
   };
 
@@ -47,6 +51,10 @@ export class CartService {
     if (index !== -1) {
       this.actions.remove(index);
     }
+  }
+  
+  public clear(): void {
+    this.actions.removeAll();
   }
 
   public toggleItem(sushiObj: ISushi): void {

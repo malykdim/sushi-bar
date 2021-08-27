@@ -5,28 +5,28 @@ import { Router } from '@angular/router';
     providedIn: 'root'
 })
 export class UserService {
-    
+
     constructor(
         private router: Router
     ) {
         const user = localStorage.getItem('user');
         if (user) {
             this.isLogged = true;
-            this.sessionToken = user;
+            this.objectId = user;
         }
     }
 
-    public sessionToken = ''; // userObjectId
+    public objectId = ''; // userObjectId
     public isLogged = false;
 
-    public login(sessionToken: string): void {
-        this.sessionToken = sessionToken;
+    public login(objectId: string): void {
+        this.objectId = objectId;
         this.isLogged = true;
-        localStorage.setItem('user', sessionToken);
+        localStorage.setItem('user', objectId);
     }
-    
+
     public logout(): void {
-        this.sessionToken = '';
+        this.objectId = '';
         this.isLogged = false;
         localStorage.removeItem('user');
         this.router.navigate(['/']);

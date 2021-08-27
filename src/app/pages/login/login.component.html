@@ -1,34 +1,23 @@
 <div class="container">
     <div class="form-container">
-        <form  (submit)="login()" id="login-form" class="login-form">
+        <form  (submit)="submit()" id="login-form" class="login-form">
             <fieldset>
                 <p class="field field-icon">
-                    <label for="email">
+                    <label for="username">
                         <span>
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-user"></i>
                         </span>
                     </label>
-                    <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                    <input class="input-error" [(ngModel)]="form.username" type="text" name="username" id="username" placeholder="Your username" />
                 </p>
-                <!-- <p class="error">
-                    Email is required!
-                </p> -->
-            <!-- 
-                <p class="error">Email is not valid!</p>
-            -->    
                 <p class="field field-icon">
                     <label for="password">
                         <span>
                             <i class="fas fa-lock"></i>
                         </span>
                     </label>
-                    <input type="password" name="password" id="password" placeholder="******">
+                    <input type="password" [(ngModel)]="form.password" name="password" id="password" placeholder="Your password" />
                 </p>
-            <!-- 
-                <p class="error">Password is required!</p>    
-                <p class="error">Password must be at least 4 characters!</p>    
-                    
-            -->
                 <button class="button field" >Login</button>
                 
             </fieldset>

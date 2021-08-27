@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ISushi } from 'src/app/interfaces/Sushi';
 import { AjaxService } from 'src/app/services/ajax.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -14,7 +15,8 @@ export class CartComponent implements OnInit {
   constructor(
     public user: UserService,
     public cart: CartService,
-    private ajax: AjaxService
+    private ajax: AjaxService,
+    private router: Router
   ) { }
   
   public form = {
@@ -33,14 +35,19 @@ export class CartComponent implements OnInit {
   }
   
   public submitOrder(): void {
+    
     this.ajax.post({
-      url: '',
+      url: 'https://parseapi.back4app.com/classes/Orders',
       data: {
-        sessionToken: this.user.sessionToken,
-        cart: this.cart.get().filter(c => c.objectId)
+        userId: this.user.objectId,
+        sushiIds: this.cart.get().map(c => {
+          return c.objectId;
+        })
       },
       callback: (response) => {
-        
+        this.cart.clear();
+        alert('Your order was submited successfully');
+        this.router.navigate(['/']);
       }
     })
   }

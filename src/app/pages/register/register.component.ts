@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AjaxService } from 'src/app/services/ajax.service';
 import { CartService } from 'src/app/services/cart.service';
+import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterComponent  {
     private ajax: AjaxService,
     private cart: CartService,
     private user: UserService,
-    private router: Router
+    private router: Router,
+    private loginServ: LoginService
   ) { }
   
   public form = {
@@ -23,7 +25,7 @@ export class RegisterComponent  {
     email: '',
     password: ''
   };
-  
+
   public submit(): void {
     this.ajax.post({
       url: 'https://parseapi.back4app.com/users',
@@ -36,12 +38,17 @@ export class RegisterComponent  {
         if (!json.sessionToken) {
           return;
         }
-        // this.user.login(json.sessionToken);
-        if (this.cart.get()[0]) {
-          this.router.navigate(['/cart']);
-          return;
-        }
-        this.router.navigate(['/profile']);
+        this.loginServ.login({
+          username: this.form.username,
+          password: this.form.password,
+          callback: (json) => {
+            if (this.cart.get()[0]) {
+              this.router.navigate(['/cart']);
+              return;
+            }
+            this.router.navigate(['/profile']);
+          }
+        });
       }
     });
   }

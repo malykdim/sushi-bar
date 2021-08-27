@@ -1,4 +1,4 @@
-<div class="container profile-container">
+<!-- <div class="container profile-container">
     <div class="profile-info">
         <h3 class="caption">User Info</h3>
         <div class="user-card">
@@ -17,23 +17,21 @@
             </form>            
         </div>
     </div>
-    <div class="latest-order">
-        <h3 class="caption">Latest Order</h3>
-        <div class="order-card">
-            <div class="labels">
-                <span class="label">Order ID:</span>
-                <span class="label">Date:</span>
-                <span class="label">Dishes count:</span>
-                <span class="label">Total price:</span>
-                <span class="label">Order status:</span>
+</div> -->
+
+my orders
+
+<div class="cart-container">
+    <div class="list" *ngFor="let o of orders">
+        <p class="summary">
+            Orderer at {{o.createdAt}} for total of {{o.total}} &euro;
+        </p>
+        <div class="item" *ngFor="let item of o.orders">
+            <div class="img-container">
+                <img [src]="item.image" alt="sushi">
             </div>
-            <div class="info">
-                <span class="label">WwBIPRPPSV</span>
-                <span class="label">26 Aug 2021</span>
-                <span class="label">5</span>
-                <span class="label">23.70 &euro;</span>
-                <span class="label">Ordered</span>
-            </div>
+            <p class="name">{{item.name}}</p>
+            <span class="total">{{item.price}} &nbsp; &euro;</span>
         </div>
-    </div>
+    </div>    
 </div>

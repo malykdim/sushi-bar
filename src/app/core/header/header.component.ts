@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
     selector: 'app-header',
@@ -10,9 +11,11 @@ export class HeaderComponent<T> {
     title: string = 'sushi bar';
     showMenu: boolean = true;
     
-    constructor() {}
+    constructor(
+        public user: UserService
+    ) {}
     
-    toggleMenu(event: MouseEvent): void {
+    public toggleMenu(event: MouseEvent): void {
         event.preventDefault();
         this.showMenu = !this.showMenu;
     }
