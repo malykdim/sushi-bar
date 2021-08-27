@@ -1,30 +1,7 @@
-<!-- <div class="container profile-container">
-    <div class="profile-info">
-        <h3 class="caption">User Info</h3>
-        <div class="user-card">
-            <div class="labels">
-                <span class="label">Username:</span>
-                <span class="label">Email:</span>
-                <span class="label">Phone:</span>
-                <span class="label">Address:</span>
-            </div>
-            <form class="info">
-                <input type="text" name="username" class="data" placeholder="Maya">
-                <input type="text" name="email" class="data" placeholder="maya@gmail.com">
-                <input type="text" name="phone" class="data" placeholder="+359 885 547 129">
-                <input type="text" name="address" class="data" placeholder="Sofia 1016, Suha Reka, 4">
-                <input type="submit" class="edit" value="Edit">
-            </form>            
-        </div>
-    </div>
-</div> -->
-
-my orders
-
 <div class="cart-container">
     <div class="list" *ngFor="let o of orders">
         <p class="summary">
-            Orderer at {{o.createdAt}} for total of {{o.total}} &euro;
+            Orderer at {{o.createdAt}} for total of {{o.total.toFixed(2)}} &euro;
         </p>
         <div class="item" *ngFor="let item of o.orders">
             <div class="img-container">
