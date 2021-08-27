@@ -1,3 +1,4 @@
+
 @mixin enter-container {
     width: 100vw;
     height: 100vh;    
@@ -38,22 +39,22 @@
 }
 
 @mixin button {
-    padding: .3rem 1rem 0;
+    padding: .3rem 2rem 0;
     font-family: $font-family-headings;
     font-size: $font-size-buttons;
     // position: fixed;
     // bottom: 2rem;
     // left: 50%;
     // transform: translate(-50%);
-    background-color: $--light;
-    color: $--dark;
+    background-color: #fff;
+    color: #333;
     text-transform: uppercase;
     border: none;
     border-radius: 2px;
     box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.472);
     
     &:active {
-        color: $-color-success;
+        color: rgba(1, 75, 1, .7);
         transform: scale(.95);
         box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.250);
     }

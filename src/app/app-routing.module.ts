@@ -6,7 +6,6 @@ const routes: Routes = [
     {path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)},
     {path: 'signup', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)},
     {path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)},
-    {path: 'menu', loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuModule)},
     {path: '', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)},
     {path: '**', loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundModule)}
 ];

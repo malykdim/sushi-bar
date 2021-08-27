@@ -30,22 +30,5 @@ export class HomeComponent implements OnInit {
     public sushiTracker(index: number, sushiObj: ISushi): string {
         return sushiObj.objectId;
     }    
-    
-    /*   
-    private init(): void {
-        this.ajax.post({
-            uri: '/mqk',
-            data: {
-                action: 'deleteUser',
-                user_id: 1
-            },
-            callback: (response): void => {
-                if (response.success === 1) {
-                // ...
-                }
-            }
-        });
-    }
- */
 }
 

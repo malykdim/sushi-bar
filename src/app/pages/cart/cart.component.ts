@@ -35,6 +35,11 @@ export class CartComponent implements OnInit {
   }
   
   public submitOrder(): void {
+    if (this.sushies.length < 1) {
+      alert('Your cart is empty');
+      this.router.navigate(['/']);
+      return;
+    }
     
     this.ajax.post({
       url: 'https://parseapi.back4app.com/classes/Orders',
@@ -47,7 +52,7 @@ export class CartComponent implements OnInit {
       callback: (response) => {
         this.cart.clear();
         alert('Your order was submited successfully');
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
       }
     })
   }
